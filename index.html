@@ -50,46 +50,13 @@
             margin: 0 auto;
         }
 
-        /* Новая стилизация кнопки */
-        .floating-btn {
-            position: fixed;
-            left: 20px;
-            bottom: 500px;
-            z-index: 998;
-            padding: 40px 80px;
-            background: #e2c93d;
-            color: #333;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 18px;
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transform: translateY(0);
-            animation: pulse 2s infinite;
-        }
-        .floating-btn:hover {
-            background: #d4b825;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-        }
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(226, 201, 61, 0.7); }
-            70% { box-shadow: 0 0 0 15px rgba(226, 201, 61, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(226, 201, 61, 0); }
-        }
-
         h1, h2, h3 {
             margin-bottom: 20px;
         }
         p {
             margin-bottom: 15px;
         }
+        
         /* Шапка с логотипом */
         header {
             background: #fae26a;
@@ -448,186 +415,6 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.3);
         }
 
-        /* Улучшенное модальное окно */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.7);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 1001;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(5px);
-        }
-        .modal-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-        .modal {
-            background: white;
-            padding: 40px;
-            border-radius: 15px;
-            width: 90%;
-            max-width: 500px;
-            position: relative;
-            transform: translateY(-20px);
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            border: 2px solid #e2c93d;
-        }
-        .modal-overlay.active .modal {
-            transform: translateY(0);
-        }
-        .modal-close {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            font-size: 28px;
-            cursor: pointer;
-            color: #666;
-            background: none;
-            border: none;
-            transition: all 0.3s;
-        }
-        .modal-close:hover {
-            color: #f21b1b;
-            transform: rotate(90deg);
-        }
-        .modal-title {
-            font-size: 1.8rem;
-            margin-bottom: 25px;
-            color: #333;
-            text-align: center;
-            position: relative;
-            padding-bottom: 15px;
-        }
-        .modal-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background: #e2c93d;
-            border-radius: 3px;
-        }
-        .modal-form {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-        .form-group {
-            display: flex;
-            flex-direction: column;
-        }
-        .form-group label {
-            margin-bottom: 8px;
-            font-weight: 600;
-            color: #555;
-        }
-        .form-group input, 
-        .form-group textarea {
-            padding: 12px 18px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            font-size: 16px;
-            transition: all 0.3s;
-        }
-        .form-group input:focus, 
-        .form-group textarea:focus {
-            border-color: #e2c93d;
-            box-shadow: 0 0 0 3px rgba(226, 201, 61, 0.2);
-            outline: none;
-        }
-        .form-group textarea {
-            min-height: 120px;
-            resize: vertical;
-        }
-        .modal-submit {
-            background: #e2c93d;
-            color: #333;
-            border: none;
-            padding: 15px 25px;
-            border-radius: 8px;
-            font-weight: bold;
-            font-size: 16px;
-            cursor: pointer;
-            transition: all 0.3s;
-            margin-top: 10px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        .modal-submit:hover {
-            background: #d4b825;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        .modal-submit:active {
-            transform: translateY(0);
-        }
-        .phone-error {
-            color: #f21b1b;
-            font-size: 14px;
-            margin-top: 5px;
-            display: none;
-        }
-
-        /* Модальное окно для фото */
-        .photo-modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.9);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 1002;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-        }
-        .photo-modal-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-        .photo-modal {
-            position: relative;
-            max-width: 90%;
-            max-height: 90%;
-        }
-        .photo-modal img {
-            max-width: 100%;
-            max-height: 90vh;
-            display: block;
-            margin: 0 auto;
-            border-radius: 10px;
-            box-shadow: 0 0 30px rgba(0,0,0,0.5);
-        }
-        .photo-modal-close {
-            position: absolute;
-            top: -40px;
-            right: -40px;
-            color: white;
-            font-size: 40px;
-            cursor: pointer;
-            background: none;
-            border: none;
-            transition: all 0.3s;
-        }
-        .photo-modal-close:hover {
-            color: #e2c93d;
-            transform: rotate(90deg);
-        }
-
         /* Адаптивность */
         @media (max-width: 992px) {
             .about-container {
@@ -637,17 +424,6 @@
                 order: -1;
                 height: 300px;
                 margin-bottom: 30px;
-            }
-            .floating-btn {
-                left: 10px;
-                bottom: 10px;
-                padding: 15px 30px;
-                font-size: 16px;
-            }
-            .photo-modal-close {
-                top: -30px;
-                right: 0;
-                font-size: 30px;
             }
         }
 
@@ -672,21 +448,27 @@
             .section-title {
                 font-size: 1.8rem;
             }
-            .modal {
-                padding: 30px 20px;
-            }
         }
 
-        /* Новые стили для акции */
-        .promo-banner {
-            background: #e2c93d;
-            padding: 15px 0;
+        /* Контактная информация */
+        .contact-info {
+            background: #f9f9f9;
+            padding: 40px 0;
             text-align: center;
-            font-weight: bold;
+        }
+        .contact-info h2 {
+            margin-bottom: 30px;
+        }
+        .contact-details {
             font-size: 1.2rem;
-            position: relative;
-            z-index: 900;
-            margin-top: 60px;
+            margin-bottom: 20px;
+        }
+        .contact-details a {
+            color: #0088cc;
+            text-decoration: none;
+        }
+        .contact-details a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -706,6 +488,7 @@
                 <a href="#portfolio">Примеры работ</a>
                 <a href="#about">О нас</a>
                 <a href="#advantages">Наши преимущества</a>
+                <a href="#contact">Контакты</a>
             </nav>
             <div class="burger-menu">☰</div>
         </div>
@@ -716,7 +499,7 @@
         <div class="container hero-content">
             <h1>Утепление и обшивка балконов в Минске</h1>
             <p>Профессиональное утепление и отделка лоджий, превращение их в уютные кабинеты или лаунж-зоны.</p>
-            <button class="floating-btn" id="orderBtn">Оставить заявку</button>
+            <a href="#contact" class="floating-btn">Связаться с нами</a>
         </div>
     </section>
 
@@ -761,7 +544,7 @@
                     <p>Комплексное утепление балкона с использованием качественных материалов.</p>
                 </div>
                 <div class="service-item">
-                    <h3>Наручная обшивка парапета</h3>
+                    <h3>Наружная обшивка парапета</h3>
                     <p>Установка экрана на фасадной стороне для наружной отделки.</p>
                 </div>
                 <div class="service-item">
@@ -831,7 +614,7 @@
                 <div class="advantage-item">
                     <div class="advantage-icon">📅</div>
                     <h3>Беспроцентная рассрочка на ремонт балконов</h3>
-                    <p>Платите удобно без переплат! Мы предлагаем: Собственную рассрочку 0% без участия банков. Гибкий срок – от 4 до 6 месяцев. Прозрачные условия без скрытых комиссий. Оформление в один день без справок и поручителей. Разделите стоимость ремонта на комфортные платежи и получите: Качественный балкон уже сейчас. Сохранение семейного бюджета. Отсутствие переплат за весь период.</p>
+                    <p>Платите удобно без переплат! Мы предлагаем: Собственную рассрочку 0% без участия банков. Гибкий срок – от 4 до 6 месяцев. Прозрачные условия без скрыных комиссий. Оформление в один день без справок и поручителей. Разделите стоимость ремонта на комфортные платежи и получите: Качественный балкон уже сейчас. Сохранение семейного бюджета. Отсутствие переплат за весь период.</p>
                 </div>
                 
                 <div class="advantage-item">
@@ -864,6 +647,19 @@
         </div>
     </section>
 
+    <!-- Контакты -->
+    <section class="contact-info" id="contact">
+        <div class="container">
+            <h2 class="section-title">Контакты</h2>
+            <div class="contact-details">
+                <p>Телефон: <a href="tel:+375291214229">+375 29 121 42 29</a></p>
+                <p>Email: <a href="mailto:info@balkonomania.by">info@balkonomania.by</a></p>
+                <p>Адрес: Минск, ул. Примерная, 123</p>
+                <p>Режим работы: Пн-Пт: 9:00-18:00, Сб: 10:00-15:00</p>
+            </div>
+        </div>
+    </section>
+
     <!-- Футер -->
     <footer>
         <div class="container footer-container">
@@ -871,38 +667,6 @@
             <a href="#" class="back-to-top" id="backToTop">↑</a>
         </div>
     </footer>
-
-    <!-- Модальное окно для заявки -->
-    <div class="modal-overlay" id="modalOverlay">
-        <div class="modal">
-            <button class="modal-close" id="modalClose">&times;</button>
-            <h3 class="modal-title">Оставить заявку</h3>
-            <form class="modal-form" id="orderForm">
-                <div class="form-group">
-                    <label for="name">Ваше имя</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="phone">Телефон (формат: +375XXXXXXXXX)</label>
-                    <input type="tel" id="phone" name="phone" required placeholder="+375291234567">
-                    <div class="phone-error" id="phoneError">Пожалуйста, введите номер в формате +375XXXXXXXXX</div>
-                </div>
-                <div class="form-group">
-                    <label for="message">Сообщение (необязательно)</label>
-                    <textarea id="message" name="message"></textarea>
-                </div>
-                <button type="submit" class="modal-submit">Отправить заявку</button>
-            </form>
-        </div>
-    </div>
-
-    <!-- Модальное окно для фото -->
-    <div class="photo-modal-overlay" id="photoModalOverlay">
-        <div class="photo-modal">
-            <button class="photo-modal-close" id="photoModalClose">&times;</button>
-            <img id="fullPhoto" src="" alt="Полноразмерное фото">
-        </div>
-    </div>
 
     <script>
         // Кнопка "Наверх"
@@ -920,114 +684,6 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
-        // Модальное окно
-        const orderBtn = document.getElementById('orderBtn');
-        const modalOverlay = document.getElementById('modalOverlay');
-        const modalClose = document.getElementById('modalClose');
-        const orderForm = document.getElementById('orderForm');
-        const phoneInput = document.getElementById('phone');
-        const phoneError = document.getElementById('phoneError');
-
-        // Модальное окно для фото
-        const photoModalOverlay = document.getElementById('photoModalOverlay');
-        const photoModalClose = document.getElementById('photoModalClose');
-        const fullPhoto = document.getElementById('fullPhoto');
-
-        // Функция проверки телефона
-        function validatePhone(phone) {
-            const regex = /^\+375(25|29|33|44)\d{7}$/;
-            return regex.test(phone);
-        }
-
-        // Обработчик ввода телефона
-        phoneInput.addEventListener('input', function(e) {
-            // Автоматическое добавление +375 если его нет
-            if (!this.value.startsWith('+375') && this.value.length > 0) {
-                this.value = '+375' + this.value.replace(/^\+375/, '');
-            }
-            
-            // Проверка валидности
-            if (validatePhone(this.value)) {
-                phoneError.style.display = 'none';
-                this.style.borderColor = '#ddd';
-            } else {
-                this.style.borderColor = '#f21b1b';
-            }
-        });
-
-        // Открытие модального окна
-        orderBtn.addEventListener('click', () => {
-            modalOverlay.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        });
-
-        // Закрытие модального окна
-        modalClose.addEventListener('click', () => {
-            modalOverlay.classList.remove('active');
-            document.body.style.overflow = '';
-        });
-
-        // Закрытие при клике вне окна
-        modalOverlay.addEventListener('click', (e) => {
-            if (e.target === modalOverlay) {
-                modalOverlay.classList.remove('active');
-                document.body.style.overflow = '';
-            }
-        });
-
-        // Закрытие модального окна с фото
-        photoModalClose.addEventListener('click', () => {
-            photoModalOverlay.classList.remove('active');
-            document.body.style.overflow = '';
-        });
-
-        // Закрытие при клике вне окна с фото
-        photoModalOverlay.addEventListener('click', (e) => {
-            if (e.target === photoModalOverlay) {
-                photoModalOverlay.classList.remove('active');
-                document.body.style.overflow = '';
-            }
-        });
-
-        // Обработка отправки формы
-        orderForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            // Проверка телефона
-            if (!validatePhone(phoneInput.value)) {
-                phoneError.style.display = 'block';
-                phoneInput.focus();
-                return;
-            } else {
-                phoneError.style.display = 'none';
-            }
-
-            // Здесь должна быть ваша логика отправки формы
-            // Например, отправка на email или через серверный скрипт
-            alert('✅ Заявка отправлена! Мы свяжемся с вами в ближайшее время.');
-            orderForm.reset();
-            modalOverlay.classList.remove('active');
-            document.body.style.overflow = '';
-        });
-
-        // Закрытие по ESC
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && modalOverlay.classList.contains('active')) {
-                modalOverlay.classList.remove('active');
-                document.body.style.overflow = '';
-            }
-        });
-
-        // Сделаем кнопку плавающей при скролле
-        window.addEventListener('scroll', function() {
-            const floatingBtn = document.querySelector('.floating-btn');
-            if (window.pageYOffset > 100) {
-                floatingBtn.style.transform = 'translateY(0)';
-            } else {
-                floatingBtn.style.transform = 'translateY(70px)';
-            }
-        });
-
         // Галерея изображений
         const imageFiles = ['1.jpg', '2.jpg', '3.jpg'];
         const portfolioImages = ['7.jpg', '8.jpg', '9.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg'];
@@ -1041,15 +697,7 @@
                 const galleryItem = document.createElement('div');
                 galleryItem.className = 'gallery-item';
                 galleryItem.style.backgroundImage = `url('${folder}/${image}')`;
-                galleryItem.setAttribute('data-full', `${folder}/${image}`);
                 galleryContainer.appendChild(galleryItem);
-                
-                galleryItem.addEventListener('click', function() {
-                    const fullImageUrl = this.getAttribute('data-full');
-                    document.getElementById('fullPhoto').src = fullImageUrl;
-                    document.getElementById('photoModalOverlay').classList.add('active');
-                    document.body.style.overflow = 'hidden';
-                });
             });
         }
 
